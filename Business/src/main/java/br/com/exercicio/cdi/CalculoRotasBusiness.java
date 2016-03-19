@@ -46,7 +46,7 @@ public class CalculoRotasBusiness {
 			throw new GrafoExcpetion("Mapa já cadastrado");
 		}
 	
-		if(malha.getRotas().size()>0){
+		if(malha.getRotas()==null || malha.getRotas().size()==0){
 			throw new GrafoExcpetion("Rotas inválidas");
 		}
 		
@@ -56,7 +56,8 @@ public class CalculoRotasBusiness {
 		for (RotaMalha rota : malha.getRotas()) {
 
 			// nao aceita distancia negativa e nem cordenadas vazias.
-			if (rota.getDistancia() < 0 || rota.getP1().trim().equals("") || rota.getP2().trim().equals("")) {
+			if (rota.getDistancia() < 0 || rota.getP1() == null || rota.getP2() == null
+					|| rota.getP1().trim().equals("") || rota.getP2().trim().equals("")) {
 				throw new GrafoExcpetion("Mapa inválido");
 			}
 
