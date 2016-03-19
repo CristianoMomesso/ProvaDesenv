@@ -1,4 +1,4 @@
-# Exercicio Walmart
+# Exercicio entregando mercadorias
 
 ## Tecnologias utilizadas
 
