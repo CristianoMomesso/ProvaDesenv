@@ -88,7 +88,7 @@ Exemplo de requisição JSON para persistência de mapas
 
 ### POST
 
-http://Endereço servidor: porta/Service/rest/Rotas/pesquisaRota
+http://Endereço servidor: porta/Service/rest/Rotas/pesquisaRota 
 
 Pesquisar rota:
 
@@ -108,3 +108,4 @@ Exemplo de requisição JSON para pesquisa de rota
 	
 }
 
+### Resposta do webservice
