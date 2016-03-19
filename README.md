@@ -32,6 +32,8 @@ Mochito- framework que auxilia na geração dos testes.
 
 ->No servidor de aplicação inserir Service para deploy.
 
+->Instalar o banco mySql e colocar os dados de acesso no banco no datasource que se encontra em persistence.xml
+
 ## Arquitetura
 
 -> Optei por dividir o sistema em camada sendo cada uma um projeto maven diferente.
@@ -109,3 +111,9 @@ Exemplo de requisição JSON para pesquisa de rota
 }
 
 ### Resposta do webservice
+
+-> JSON contendo a mensagem do resultado do serviço. 
+
+## Testes unitários
+
+-> Para os testes unitários utilizei junit em conjunto com o Mockito.
