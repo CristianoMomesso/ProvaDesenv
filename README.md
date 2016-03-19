@@ -19,3 +19,13 @@ SoapUI 5.2.1 - Interface para consumo de webservice. Optei por também realizar 
 MySql - Banco de dados.
 
 Mochito- framework que auxilia na geração dos testes.
+
+## Instalação
+
+->Baixar ou clonar o projeto via git do endereço https://github.com/CristianoMomesso/ProvaDesenv.
+
+->Para importar o projeto git pelo eclipse. Eu utilizei o pluggin do próprio eclipse.
+
+->Adicionar na aba server o servidor de aplicação  Wildfly 8.2.1.Final. pode ser necessário instalar algumas extensões do jboss via eclipse market.
+
+-> Em run configuration do maven , configurar  no campo gols a sequinte linha de comando : clean tomcat:run
