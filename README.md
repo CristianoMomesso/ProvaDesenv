@@ -58,7 +58,7 @@ para achar uma rota valida.
 
 ### POST
 
-http://Endereço servidor: porta/RestService2/rest/Rotas/gravaMapa
+http://Endereço servidor: porta/Service/rest/Rotas/gravaMapa
 
 Gravar mapas:
 
@@ -88,7 +88,7 @@ Exemplo de requisição JSON para persistência de mapas
 
 ### POST
 
-http://Endereço servidor: porta/RestService2/rest/Rotas/pesquisaRota
+http://Endereço servidor: porta/Service/rest/Rotas/pesquisaRota
 
 Pesquisar rota:
 
