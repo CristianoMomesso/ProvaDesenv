@@ -28,4 +28,6 @@ Mochito- framework que auxilia na geração dos testes.
 
 ->Adicionar na aba server o servidor de aplicação  Wildfly 8.2.1.Final. pode ser necessário instalar algumas extensões do jboss via eclipse market.
 
--> Em run configuration do maven , configurar  no campo gols a sequinte linha de comando : clean tomcat:run
+->Executar o comando mvn install para todos os projetos seguindo a específica ordem : DTO , DAO , Business, Service.
+
+->No servidor de aplicação inserir Service para deploy.

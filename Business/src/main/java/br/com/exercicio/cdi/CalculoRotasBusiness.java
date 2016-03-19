@@ -45,6 +45,10 @@ public class CalculoRotasBusiness {
 		if(dados.buscaGrafo(malha.getNomeMapa()) != null){
 			throw new GrafoExcpetion("Mapa já cadastrado");
 		}
+	
+		if(malha.getRotas().size()>0){
+			throw new GrafoExcpetion("Rotas inválidas");
+		}
 		
 		// TODO verifica existencia do grafo na base
 		// Metodo percorre a malha e monta o objeto do grafo que sera
@@ -84,8 +88,7 @@ public class CalculoRotasBusiness {
 			// persiste grafo montado
 			dados.add(grafo);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw e;
 		}
 	}
 
