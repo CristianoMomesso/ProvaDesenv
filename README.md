@@ -31,3 +31,16 @@ Mochito- framework que auxilia na geração dos testes.
 ->Executar o comando mvn install para todos os projetos seguindo a específica ordem : DTO , DAO , Business, Service.
 
 ->No servidor de aplicação inserir Service para deploy.
+
+## Arquitetura
+
+-> Optei por dividir o sistema em camada sendo cada uma um projeto maven diferente.
+
+->As camadas são:
+	->Service: Cada que possui todos as chamadas dos serviços que serão espostos.
+	->DTO: O padrão foi usado para não expor a camada de persistência para os serviços.
+	->Business: Camda qeu possui todas as regras de negocio da geração de rotas.
+	->Dao: Padrão utilizado para a persistencia de dados.
+
+-> Todas as menssagens retornadas pelo sistema se encontram no arquivo de configuração localizado em "/Exercicio/conf/conf.properties"
+
