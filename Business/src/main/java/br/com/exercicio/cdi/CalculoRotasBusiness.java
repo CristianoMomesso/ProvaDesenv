@@ -20,12 +20,23 @@ import br.com.exercicio.exception.GrafoExcpetion;
 
 public class CalculoRotasBusiness {
 
+	/**
+	 * Atributo utils do tipo GrafoBusinessUtils
+	 */
 	@Inject
 	GrafoBusinessUtils utils;
 
+	/**
+	 * Atributo dados do tipo GrafoDAO
+	 */
 	@Inject
 	GrafoDAO dados;
 
+	/**
+	 * Método business que possui as regras de negocio para salvar o grafo
+	 * @param malha
+	 * @throws GrafoExcpetion
+	 */
 	public void gravaGrafo(MapaMalha malha) throws GrafoExcpetion {
 		Grafo grafo = new Grafo();
 
@@ -78,6 +89,13 @@ public class CalculoRotasBusiness {
 		}
 	}
 
+	/**
+	 * Método que possui as regras de negocio para buscar uma rota
+	 * @param entrada
+	 * @return
+	 * @throws IOException
+	 * @throws GrafoExcpetion
+	 */
 	public String calculaRota(EntradaCalculo entrada) throws IOException, GrafoExcpetion {
 		double custo = 0d;
 		Grafo grafo = new Grafo();

@@ -12,6 +12,11 @@ import br.com.exercicio.dto.EntradaCalculo;
 import br.com.exercicio.dto.MapaMalha;
 import br.com.exercicio.exception.GrafoExcpetion;
 
+/**
+ * Servico rest exposto que possui os métodos de rotas
+ * @author Cristiano Momesso
+ *
+ */
 @Path("/Rotas")
 public class RotasService {
 
