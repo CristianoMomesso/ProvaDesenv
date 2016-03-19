@@ -6,8 +6,18 @@ import javax.persistence.Query;
 
 import br.com.exercicio.entities.Grafo;
 
+/**
+ * classe que realiza manipulações referente ao grafo na base
+ * @author Cristiano Momesso
+ *
+ */
 public class GrafoDAO  extends BaseDAO<Grafo>  {
 
+	/**
+	 * Método que busca grafo na base.
+	 * @param nome
+	 * @return
+	 */
 	public Grafo buscaGrafo(String nome) {
 		try {
 			Query query = manager.createQuery("select m from Grafo m where m.nomeMapa like :nome");
