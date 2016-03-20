@@ -4,7 +4,7 @@
 
 Maven - Foi utilizado o maven para o gerenciamento de dependência, buscando nos repositórios os jars necessários para a execução do sistema.    
 
-JPA com hibernate - Para persistência dos dados, foi optado pelo uso de jpa com hibernate, pela facilidade de persistir objetos na base..
+JPA com hibernate - Para persistência dos dados, foi optado pelo uso de jpa com hibernate, pela facilidade de persistir objetos na base.
 
 java 1.8.
 
@@ -128,7 +128,11 @@ Exemplo de requisição JSON para pesquisa de rota
 ## Padrões de projeto 
  
  Foram utilizados os seguintes padrões:
- Singleton,
- DTO(Objeto de Transferência de Dados),
- Injeção de dependência,
- DAO,
+ 
+ Singleton
+ 
+ DTO(Objeto de Transferência de Dados)
+ 
+ Injeção de dependência
+ 
+ DAO
