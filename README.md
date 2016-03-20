@@ -26,6 +26,10 @@ Mochito- framework que auxilia na geração dos testes.
 
 ->Para importar o projeto git pelo eclipse. Eu utilizei o pluggin do próprio eclipse.
 
+->Pode ser necessário executar maven update.
+
+->Caso a ide seja o eclipse, verificar em "window > preference > java  > instaled jre" esta instalado um jdk  
+
 ->Adicionar na aba server o servidor de aplicação  Wildfly 8.2.1.Final. pode ser necessário instalar algumas extensões do jboss via eclipse market.
 
 ->Executar o comando mvn install para todos os projetos seguindo a específica ordem : DTO , DAO , Business, Service.
