@@ -125,10 +125,10 @@ Exemplo de requisição JSON para pesquisa de rota
  Os testes se encontram na pasta "src/test/java" do projeto business.Os testes foram feitos
  visando testar as regras de negocio do sistema
  
- ## Padrões de projeto 
+## Padrões de projeto 
  
  Foram utilizados os seguintes padrões:
- Singleton
- DTO(Objeto de Transferência de Dados)
- Injeção de dependência
- DAO
+ Singleton,
+ DTO(Objeto de Transferência de Dados),
+ Injeção de dependência,
+ DAO,
