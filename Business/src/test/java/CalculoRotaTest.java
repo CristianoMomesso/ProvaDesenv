@@ -1,5 +1,6 @@
 import static org.mockito.Matchers.any;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 import br.com.exercicio.cdi.CalculoRotasBusiness;
 import br.com.exercicio.cdi.GrafoBusinessUtils;
 import br.com.exercicio.cdi.GrafoDAO;
+import br.com.exercicio.dto.EntradaCalculo;
 import br.com.exercicio.dto.MapaMalha;
 import br.com.exercicio.dto.RotaMalha;
 import br.com.exercicio.entities.Grafo;
@@ -169,5 +171,67 @@ public class CalculoRotaTest {
 		rotas.add(primeiraRota);
 		mapa.setRotas(rotas); 
 		calc.gravaGrafo(mapa);
+	}
+	
+	/**
+	 * @throws GrafoExcpetion
+	 * @throws IOException 
+	 */
+	@Test(expected = GrafoExcpetion.class) 
+	public void calculoRotaDadosInvalidos() throws GrafoExcpetion, IOException {
+		Mockito.when(this.dados.buscaGrafo("teste"))
+		.thenReturn(null);
+		EntradaCalculo entrada = new EntradaCalculo();
+		calc.calculaRota(entrada);
+	}
+	/**
+	 * @throws GrafoExcpetion
+	 * @throws IOException 
+	 */
+	@Test(expected = GrafoExcpetion.class) 
+	public void calculoRotaAutonomiaZero() throws GrafoExcpetion, IOException {
+		Mockito.when(this.dados.buscaGrafo("teste"))
+		.thenReturn(null);
+		EntradaCalculo entrada = new EntradaCalculo();
+		entrada.setNomeMapa("Teste");
+		entrada.setAutonomia(0);
+		entrada.setVertice1("A");
+		entrada.setVertice2("B");
+		entrada.setValorLitro(10);
+		calc.calculaRota(entrada);
+	}
+	
+	/**
+	 * @throws GrafoExcpetion
+	 * @throws IOException 
+	 */
+	@Test(expected = GrafoExcpetion.class) 
+	public void calculoRotaValorLitroZero() throws GrafoExcpetion, IOException {
+		Mockito.when(this.dados.buscaGrafo("teste"))
+		.thenReturn(null);
+		EntradaCalculo entrada = new EntradaCalculo();
+		entrada.setNomeMapa("Teste");
+		entrada.setAutonomia(5);
+		entrada.setVertice1("A");
+		entrada.setVertice2("B");
+		entrada.setValorLitro(0);
+		calc.calculaRota(entrada);
+	}
+	
+	/**
+	 * @throws GrafoExcpetion
+	 * @throws IOException 
+	 */
+	@Test(expected = GrafoExcpetion.class) 
+	public void calculoRotaVerticeVazio() throws GrafoExcpetion, IOException {
+		Mockito.when(this.dados.buscaGrafo("teste"))
+		.thenReturn(null);
+		EntradaCalculo entrada = new EntradaCalculo();
+		entrada.setNomeMapa("Teste");
+		entrada.setAutonomia(5);
+		entrada.setVertice1("");
+		entrada.setVertice2("B");
+		entrada.setValorLitro(0);
+		calc.calculaRota(entrada);
 	}
 }

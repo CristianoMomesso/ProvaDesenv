@@ -34,6 +34,7 @@ public class CalculoRotasBusiness {
 
 	/**
 	 * Método business que possui as regras de negocio para salvar o grafo
+	 * 
 	 * @param malha
 	 * @throws GrafoExcpetion
 	 */
@@ -41,15 +42,15 @@ public class CalculoRotasBusiness {
 		Grafo grafo = new Grafo();
 
 		grafo.setNomeMapa(malha.getNomeMapa());
-		
-		if(dados.buscaGrafo(malha.getNomeMapa()) != null){
+
+		if (dados.buscaGrafo(malha.getNomeMapa()) != null) {
 			throw new GrafoExcpetion("Mapa já cadastrado");
 		}
-	
-		if(malha.getRotas()==null || malha.getRotas().size()==0){
+
+		if (malha.getRotas() == null || malha.getRotas().size() == 0) {
 			throw new GrafoExcpetion("Rotas inválidas");
 		}
-		
+
 		// TODO verifica existencia do grafo na base
 		// Metodo percorre a malha e monta o objeto do grafo que sera
 		// persistido na base
@@ -74,7 +75,7 @@ public class CalculoRotasBusiness {
 			}
 			ar.setVertice(vertice);
 			vertice.getArestats().add(ar);
-			
+
 			vertice = utils.buscaVertice(rota.getP2().toUpperCase().trim(), grafo.getVerticets());
 
 			if (vertice == null) {
@@ -95,6 +96,7 @@ public class CalculoRotasBusiness {
 
 	/**
 	 * Método que possui as regras de negocio para buscar uma rota
+	 * 
 	 * @param entrada
 	 * @return
 	 * @throws IOException
@@ -105,6 +107,17 @@ public class CalculoRotasBusiness {
 		Grafo grafo = new Grafo();
 		String resposta = null;
 
+		if (entrada == null || entrada.getVertice1() == null || entrada.getVertice2() == null
+				|| entrada.getNomeMapa() == null || entrada.getVertice1().equals("")
+				|| entrada.getVertice2().equals("")) {
+			throw new GrafoExcpetion("Dados de entrada inválidos");
+		}
+		if (entrada.getAutonomia()<=0) {
+			throw new GrafoExcpetion("Autonomia deve ser maior que zero");
+		}
+		if (entrada.getValorLitro()<=0) {
+			throw new GrafoExcpetion("Valor do litro deve ser maior que zero");
+		}
 		grafo.setNomeMapa(entrada.getNomeMapa().toUpperCase().trim());
 		grafo = dados.buscaGrafo(grafo.getNomeMapa());
 		// verifica se existe o grafo na base
@@ -129,7 +142,7 @@ public class CalculoRotasBusiness {
 
 			// gera caminhos utilizando o algoritmo de DIJKSTRA
 			geraCaminhos(vert, verticets);
-			
+
 			// verifica a lista procurando a rota com o destino desejado
 			for (Vertice v : verticets) {
 				if (v.getNomeVertice().endsWith(entrada.getVertice2().toUpperCase().trim())) {
@@ -152,15 +165,13 @@ public class CalculoRotasBusiness {
 					resposta = resposta.concat(" Custo de ").concat(new Double(custo).toString());
 				}
 			}
-			
-			
+
 		} else {
 			throw new GrafoExcpetion("mapa não existe");
 		}
 		return resposta;
 	}
-	
-	
+
 	/**
 	 * Método que após a execução do algoritmo de DIJKSTRA inverte a coleção
 	 * para pegar os caminhos do início para o fim
@@ -172,13 +183,13 @@ public class CalculoRotasBusiness {
 	private static List<Vertice> pegaMenorCaminho(Vertice target) {
 		List<Vertice> path = new ArrayList<Vertice>();
 
-		for (Vertice vertice = target; vertice != null; vertice = vertice
-				.getAnterior()) {
+		for (Vertice vertice = target; vertice != null; vertice = vertice.getAnterior()) {
 			path.add(vertice);
 		}
 		Collections.reverse(path);
 		return path;
 	}
+
 	/**
 	 * Método que implementa o algoritmo de DIJKSTRA
 	 * 
@@ -210,7 +221,7 @@ public class CalculoRotasBusiness {
 			}
 		}
 	}
-	
+
 	/**
 	 * Método que busca vertice de destino em uma lista
 	 * 
@@ -219,8 +230,7 @@ public class CalculoRotasBusiness {
 	 * @param verticets
 	 * @return
 	 */
-	private  Vertice buscaVertice(String destino,
-			List<Vertice> verticets) {
+	private Vertice buscaVertice(String destino, List<Vertice> verticets) {
 		for (Vertice e : verticets) {
 			if (e.getNomeVertice().toUpperCase().equals(destino.toUpperCase())) {
 				return e;
