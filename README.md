@@ -24,7 +24,7 @@ Mochito- framework que auxilia na geração dos testes.
 
 ->Baixar ou clonar o projeto via git do endereço https://github.com/CristianoMomesso/ProvaDesenv.
 
-->Para importar o projeto git pelo eclipse. Eu utilizei o pluggin do próprio eclipse.
+->Para importar o projeto git pelo eclipse eu utilizei o pluggin do próprio eclipse.
 
 ->Pode ser necessário executar maven update.
 
