@@ -34,6 +34,8 @@ Mochito- framework que auxilia na geração dos testes.
 
 ->Instalar o banco mySql e colocar os dados de acesso no banco no datasource que se encontra em persistence.xml
 
+-> Ao iniciar o sistema o hibernate criará as tabelas automaticamente após a primeira execução.
+
 ## Arquitetura
 
 -> Optei por dividir o sistema em camada sendo cada uma um projeto maven diferente.
