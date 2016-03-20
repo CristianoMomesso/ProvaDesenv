@@ -44,7 +44,6 @@ Mochito- framework que auxilia na geração dos testes.
 	->Business: Camda qeu possui todas as regras de negocio da geração de rotas.
 	->Dao: Padrão utilizado para a persistencia de dados.
 
--> Todas as menssagens retornadas pelo sistema se encontram no arquivo de configuração localizado em "/Exercicio/conf/conf.properties"
 
 ## Utilização 
 
