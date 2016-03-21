@@ -1,4 +1,4 @@
-package br.com.exercicio.cdi;
+package br.com.exercicio.impl;
 
 import java.util.List;
 

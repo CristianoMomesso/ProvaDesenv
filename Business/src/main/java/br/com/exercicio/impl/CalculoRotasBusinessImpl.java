@@ -1,4 +1,4 @@
-package br.com.exercicio.cdi;
+package br.com.exercicio.impl;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
 
 import javax.inject.Inject;
 
+import br.com.exercicio.cdi.GrafoDAO;
 import br.com.exercicio.comparators.VerticeComparator;
 import br.com.exercicio.dto.EntradaCalculo;
 import br.com.exercicio.dto.MapaMalha;
@@ -17,8 +18,9 @@ import br.com.exercicio.entities.Aresta;
 import br.com.exercicio.entities.Grafo;
 import br.com.exercicio.entities.Vertice;
 import br.com.exercicio.exception.GrafoExcpetion;
+import br.com.exercicio.interfaces.CalculoRotasBusiness;
 
-public class CalculoRotasBusiness {
+public class CalculoRotasBusinessImpl implements CalculoRotasBusiness{
 
 	/**
 	 * Atributo utils do tipo GrafoBusinessUtils

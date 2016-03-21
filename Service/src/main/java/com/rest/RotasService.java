@@ -7,10 +7,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import br.com.exercicio.cdi.CalculoRotasBusiness;
 import br.com.exercicio.dto.EntradaCalculo;
 import br.com.exercicio.dto.MapaMalha;
 import br.com.exercicio.exception.GrafoExcpetion;
+import br.com.exercicio.interfaces.CalculoRotasBusiness;
 
 /**
  * Servico rest exposto que possui os métodos de rotas

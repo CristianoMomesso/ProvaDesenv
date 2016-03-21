@@ -11,8 +11,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import br.com.exercicio.cdi.CalculoRotasBusiness;
-import br.com.exercicio.cdi.GrafoBusinessUtils;
 import br.com.exercicio.cdi.GrafoDAO;
 import br.com.exercicio.dto.EntradaCalculo;
 import br.com.exercicio.dto.MapaMalha;
@@ -20,6 +18,8 @@ import br.com.exercicio.dto.RotaMalha;
 import br.com.exercicio.entities.Grafo;
 import br.com.exercicio.entities.Vertice;
 import br.com.exercicio.exception.GrafoExcpetion;
+import br.com.exercicio.impl.CalculoRotasBusinessImpl;
+import br.com.exercicio.impl.GrafoBusinessUtils;
 
 /**
  * Classe referente aos testes do calculo de rota
@@ -45,7 +45,7 @@ public class CalculoRotaTest {
 	 * Atributo calc do tipo CalculoRotasBusiness
 	 */
 	@InjectMocks
-	CalculoRotasBusiness calc;
+	CalculoRotasBusinessImpl calc;
 	
 	/**Método que testa se um mapa existe
 	 * @throws GrafoExcpetion
