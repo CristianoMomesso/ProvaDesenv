@@ -63,7 +63,7 @@ para achar uma rota valida.
 
 -> Para a estrutura de entrada de dados foi optado pelo padrão JSON pela sua simplicidade e uso difundido.
 
-### POST
+### PUT
 
 http://Endereço servidor: porta/Service/rest/Rotas/gravaMapa
 
